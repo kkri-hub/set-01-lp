@@ -144,15 +144,42 @@
     /* ================================================================
        SCENE 1: 静かなる宣誓 — Hero
     ================================================================ */
+    .s1-hero {
+      position: relative;
+    }
+
     .s1-img {
       width: 100%;
       height: 90vh;
       min-height: 560px;
+      display: block;
     }
 
-    .s1-text {
-      padding: 96px 56px 120px;
-      max-width: 880px;
+    .s1-overlay-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.18) 0%,
+        rgba(0, 0, 0, 0.52) 100%
+      );
+      z-index: 1;
+    }
+
+    .s1-copy {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 56px;
+      z-index: 2;
+    }
+
+    .s1-copy .scene-tag {
+      color: rgba(255, 255, 255, 0.42);
     }
 
     .s1-h1 {
@@ -160,16 +187,26 @@
       font-weight: 200;
       letter-spacing: 0.14em;
       line-height: 1.9;
-      color: #111111;
+      color: #ffffff;
+    }
+
+    .s1-subcopy {
+      font-size: clamp(0.82rem, 1.45vw, 0.98rem);
+      font-weight: 200;
+      letter-spacing: 0.12em;
+      line-height: 2.1;
+      color: rgba(255, 255, 255, 0.68);
+      margin-top: 28px;
+      max-width: 560px;
     }
 
     .s1-sub {
       display: block;
-      margin-top: 28px;
+      margin-top: 36px;
       font-size: 0.62rem;
       letter-spacing: 0.3em;
       font-weight: 200;
-      color: #bbbbbb;
+      color: rgba(255, 255, 255, 0.32);
     }
 
     /* ================================================================
@@ -260,35 +297,6 @@
       margin-top: 72px;
     }
 
-    .s4-spec-list {
-      list-style: none;
-      margin-top: 40px;
-    }
-
-    .s4-spec-list li {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 20px;
-      padding: 20px 0;
-      border-bottom: 1px solid #ebebeb;
-      font-size: clamp(0.82rem, 1.4vw, 0.94rem);
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      color: #2a2a2a;
-      line-height: 1.8;
-    }
-
-    .s4-spec-list li:first-child {
-      border-top: 1px solid #ebebeb;
-    }
-
-    .s4-spec-key {
-      color: #999999;
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      font-weight: 300;
-    }
-
     .s4-h2 {
       font-size: clamp(1.15rem, 2.2vw, 1.55rem);
       font-weight: 200;
@@ -319,41 +327,6 @@
       color: #555555;
     }
 
-    .s4-price-block {
-      margin-top: 48px;
-    }
-
-    .s4-price-note {
-      font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      color: #999999;
-      font-weight: 300;
-      margin-bottom: 10px;
-    }
-
-    .s4-price {
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 200;
-      letter-spacing: 0.04em;
-      color: #111111;
-      line-height: 1;
-    }
-
-    .s4-price small {
-      font-size: 0.45em;
-      letter-spacing: 0.14em;
-      color: #888888;
-      vertical-align: baseline;
-    }
-
-    .s4-price-sub {
-      margin-top: 10px;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      color: #aaaaaa;
-      font-weight: 300;
-    }
-
     /* ================================================================
        SCENE 5: 即納100セットの真実
     ================================================================ */
@@ -368,9 +341,9 @@
     }
 
     .s5-num {
-      font-size: clamp(4.5rem, 10vw, 7.5rem);
+      font-size: clamp(2.2rem, 5vw, 3.75rem);
       font-weight: 200;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.06em;
       line-height: 1;
       color: #111111;
       margin-bottom: 60px;
@@ -390,6 +363,10 @@
       height: 1px;
       background-color: #111111;
       margin-bottom: 56px;
+    }
+
+    .s5 .body-text {
+      line-height: 2.8;
     }
 
     /* ================================================================
@@ -480,8 +457,8 @@
         padding: 22px 32px;
       }
 
-      .s1-text {
-        padding: 80px 32px 96px;
+      .s1-copy {
+        padding: 0 32px;
       }
 
       /* Scene 2: 縦積みレイアウトへ */
@@ -554,8 +531,8 @@
         height: 72vh;
         min-height: 440px;
       }
-      .s1-text {
-        padding: 64px 24px 80px;
+      .s1-copy {
+        padding: 0 24px;
       }
 
       .s2-img-col {
@@ -575,11 +552,6 @@
       .s4 {
         padding: 80px 24px 100px;
       }
-      .s4-spec-list li {
-        grid-template-columns: 110px 1fr;
-        gap: 12px;
-      }
-
       .s5 {
         padding: 80px 24px 100px;
       }
@@ -634,18 +606,21 @@
     │              display:block;">                                  │
     └────────────────────────────────────────────────────────────────┘
     -->
-    <div class="s1-img ph" role="img" aria-label="画像プレースホルダー：グレーバーSET-01を装着したクローゼット">
-      <p>IMAGE PLACEHOLDER<br>グレーバー SET-01 装着クローゼット</p>
-      <p>推奨サイズ: 1920 × 1080 px 以上</p>
+    <div class="s1-hero">
+      <div class="s1-img ph" role="img" aria-label="画像プレースホルダー：グレーバーSET-01を装着したクローゼット">
+        <p>IMAGE PLACEHOLDER<br>グレーバー SET-01 装着クローゼット</p>
+        <p>推奨サイズ: 1920 × 1080 px 以上</p>
+      </div>
+      <div class="s1-overlay-bg"></div>
+      <div class="s1-copy">
+        <span class="scene-tag reveal">Scene 01 — 静かなる宣誓</span>
+        <h1 class="s1-h1 reveal d1">スーツの真価は、<br>脱いだ後に試される。</h1>
+        <p class="s1-subcopy reveal d2">選ぶべきは、都市の知性を纏う『マットグレー』の骨格。</p>
+        <span class="s1-sub reveal d3">NAKATA HANGER — SET-01 / BAR : MATT GREY</span>
+      </div>
     </div>
 
-    <div class="s1-text">
-      <span class="scene-tag reveal">Scene 01 — 静かなる宣誓</span>
-      <h1 class="s1-h1 reveal d1">クローゼットに選ぶ色は、<br>あなたの審美眼を映す鏡だ。</h1>
-      <span class="s1-sub reveal d2">NAKATA HANGER — SET-01 / BAR : MATT GREY</span>
-    </div>
-
-    <div class="reveal d3">
+    <div class="reveal">
       <div class="vline"></div>
     </div>
 
@@ -789,44 +764,6 @@
         <div>
           <h2 class="s4-h2 reveal d1">SET-01<br>グレーバー仕様</h2>
 
-          <ul class="s4-spec-list">
-            <li class="reveal d1">
-              <span class="s4-spec-key">セット内容</span>
-              <span>スーツ用ハンガー 5本セット</span>
-            </li>
-            <li class="reveal d1">
-              <span class="s4-spec-key">バー部分</span>
-              <span>マットグレー</span>
-            </li>
-            <li class="reveal d2">
-              <span class="s4-spec-key">本体素材</span>
-              <span>木製（天然木）</span>
-            </li>
-            <li class="reveal d2">
-              <span class="s4-spec-key">肩幅</span>
-              <span>商品ページにてご確認ください</span>
-            </li>
-            <li class="reveal d3">
-              <span class="s4-spec-key">対応スーツ</span>
-              <span>メンズスーツ全般</span>
-            </li>
-            <li class="reveal d3">
-              <span class="s4-spec-key">発送</span>
-              <span>即納（100セット限定）</span>
-            </li>
-          </ul>
-
-          <div class="s4-price-block reveal d3">
-            <p class="s4-price-note">SET PRICE（5本）</p>
-            <p class="s4-price">
-              <a href="https://www.nakatahanger-shop.com/?pid=69751649"
-                 target="_blank" rel="noopener noreferrer"
-                 style="color:inherit; text-decoration:none; border-bottom:1px solid #dddddd;">
-                商品ページで確認
-              </a>
-            </p>
-            <p class="s4-price-sub">※ポイント還元あり / 送料については商品ページをご確認ください</p>
-          </div>
         </div>
 
       </div>
