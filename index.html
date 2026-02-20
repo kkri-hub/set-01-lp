@@ -189,16 +189,16 @@
       box-shadow: 0 18px 48px rgba(255, 255, 255, 0.07);
     }
 
-    /* 黒ボタン（ライト背景用） */
+    /* ダークボタン（ライト背景用） */
     .cta-btn--dark {
-      background-color: #111111;
+      background-color: #2d3d35;
       color: #ffffff;
-      border-color: #111111;
+      border-color: #2d3d35;
     }
     .cta-btn--dark:hover {
       background-color: transparent;
-      color: #111111;
-      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
+      color: #2d3d35;
+      box-shadow: 0 18px 48px rgba(45, 61, 53, 0.12);
     }
 
     /* CTA ラッパー */
@@ -227,10 +227,10 @@
       left: 0;
       right: 0;
       z-index: 300;
-      background-color: rgba(14, 14, 14, 0.96);
+      background-color: rgba(34, 52, 42, 0.96);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding: 14px 56px;
       display: flex;
       align-items: center;
@@ -289,18 +289,11 @@
       height: 90vh;
       min-height: 560px;
       display: block;
-      background: linear-gradient(160deg, #1c1c1c 0%, #272727 45%, #111111 100%);
+      background: linear-gradient(160deg, #d8e4dc 0%, #e2ebe5 45%, #cfdbd3 100%);
     }
 
     .s1-overlay-bg {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.18) 0%,
-        rgba(0, 0, 0, 0.55) 100%
-      );
-      z-index: 1;
+      display: none;
     }
 
     .s1-copy {
@@ -316,7 +309,7 @@
     }
 
     .s1-copy .scene-tag {
-      color: rgba(255, 255, 255, 0.42);
+      color: rgba(45, 61, 53, 0.55);
     }
 
     .s1-h1 {
@@ -324,7 +317,7 @@
       font-weight: 200;
       letter-spacing: 0.14em;
       line-height: 1.85;
-      color: #ffffff;
+      color: #1e2e26;
     }
 
     .s1-subcopy {
@@ -332,7 +325,7 @@
       font-weight: 200;
       letter-spacing: 0.12em;
       line-height: 2.1;
-      color: rgba(255, 255, 255, 0.68);
+      color: rgba(30, 46, 38, 0.7);
       margin-top: 20px;
       max-width: 560px;
     }
@@ -344,7 +337,7 @@
       font-size: 0.62rem;
       letter-spacing: 0.3em;
       font-weight: 200;
-      color: rgba(255, 255, 255, 0.32);
+      color: rgba(30, 46, 38, 0.42);
     }
 
     .s1-cta-wrap {
@@ -504,8 +497,8 @@
       font-size: 0.78rem;
       font-weight: 300;
       letter-spacing: 0.12em;
-      color: #111111;
-      border-bottom: 1px solid #cccccc;
+      color: #2d3d35;
+      border-bottom: 1px solid #a8bdb4;
       padding-bottom: 2px;
       text-decoration: none;
       display: inline-block;
@@ -513,7 +506,7 @@
     }
 
     .for-whom-card-cta:hover {
-      border-color: #111111;
+      border-color: #2d3d35;
     }
 
     /* ================================================================
@@ -590,7 +583,7 @@
        クロージング CTA
     ================================================================ */
     .s-closing {
-      background-color: #111111;
+      background-color: #2d3d35;
       padding: 160px 56px 200px;
       text-align: center;
     }
@@ -629,8 +622,8 @@
        FOOTER
     ================================================================ */
     .footer {
-      background-color: #111111;
-      border-top: 1px solid #1c1c1c;
+      background-color: #2d3d35;
+      border-top: 1px solid #253129;
       padding: 40px 56px;
       text-align: center;
     }
@@ -797,7 +790,7 @@
         <div class="s1-cta-wrap reveal d1">
           <a
             href="https://www.nakatahanger-shop.com/?pid=69751649"
-            class="cta-btn"
+            class="cta-btn cta-btn--dark"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="SET-01 グレー 5本セットを購入する"
