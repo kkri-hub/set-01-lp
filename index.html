@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAKATA HANGER — SET-01 グレーバー仕様</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+  <style>
+
+    /* ================================================================
+       RESET & BASE
+    ================================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Serif JP', Georgia, serif;
+      background-color: #ffffff;
+      color: #111111;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* ================================================================
+       REVEAL ANIMATION — Intersection Observer
+    ================================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal.d1 { transition-delay: 0.18s; }
+    .reveal.d2 { transition-delay: 0.34s; }
+    .reveal.d3 { transition-delay: 0.50s; }
+
+    /* ================================================================
+       IMAGE PLACEHOLDER (汎用)
+       差し替え時: このdivをimgタグまたはbackground-imageに変更
+    ================================================================ */
+    .ph {
+      background-color: #cecece;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .ph p {
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      color: rgba(17, 17, 17, 0.32);
+      text-align: center;
+      line-height: 2;
+      font-weight: 300;
+    }
+
+    /* ================================================================
+       SITE HEADER
+    ================================================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      padding: 28px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      mix-blend-mode: difference;
+      pointer-events: none;
+    }
+    .header a {
+      pointer-events: auto;
+      font-size: 0.64rem;
+      font-weight: 200;
+      letter-spacing: 0.3em;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .header-cta {
+      font-size: 0.58rem !important;
+      letter-spacing: 0.22em !important;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      padding-bottom: 2px;
+      transition: border-color 0.3s ease;
+    }
+    .header-cta:hover {
+      border-color: #ffffff;
+    }
+
+    /* ================================================================
+       SHARED COMPONENTS
+    ================================================================ */
+    .scene-tag {
+      display: block;
+      font-size: 0.58rem;
+      letter-spacing: 0.28em;
+      font-weight: 300;
+      color: #999999;
+      margin-bottom: 36px;
+    }
+
+    .hline {
+      width: 48px;
+      height: 1px;
+      background-color: #111111;
+      margin-bottom: 44px;
+    }
+
+    .vline {
+      width: 1px;
+      height: 72px;
+      background-color: #dddddd;
+      margin: 0 auto;
+    }
+
+    .body-text {
+      font-size: clamp(0.88rem, 1.55vw, 1.02rem);
+      font-weight: 300;
+      line-height: 2.2;
+      letter-spacing: 0.07em;
+      color: #2a2a2a;
+    }
+    .body-text p + p {
+      margin-top: 28px;
+    }
+
+    /* ================================================================
+       SCENE 1: 静かなる宣誓 — Hero
+    ================================================================ */
+    .s1-img {
+      width: 100%;
+      height: 90vh;
+      min-height: 560px;
+    }
+
+    .s1-text {
+      padding: 96px 56px 120px;
+      max-width: 880px;
+    }
+
+    .s1-h1 {
+      font-size: clamp(1.55rem, 3.8vw, 2.75rem);
+      font-weight: 200;
+      letter-spacing: 0.14em;
+      line-height: 1.9;
+      color: #111111;
+    }
+
+    .s1-sub {
+      display: block;
+      margin-top: 28px;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      font-weight: 200;
+      color: #bbbbbb;
+    }
+
+    /* ================================================================
+       SCENE 2: 色の選択、という審美眼
+    ================================================================ */
+    .s2 {
+      padding: 120px 0 140px;
+    }
+
+    .s2-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .s2-img-col {
+      padding-left: 56px;
+    }
+
+    .s2-ph {
+      aspect-ratio: 3 / 4;
+    }
+
+    .s2-text-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 56px;
+    }
+
+    /* ================================================================
+       SCENE 3: なぜ『グレーバー』なのか
+    ================================================================ */
+    .s3 {
+      background-color: #f5f5f3;
+      padding: 140px 0 160px;
+    }
+
+    .s3-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 56px;
+    }
+
+    .s3-ph {
+      aspect-ratio: 16 / 7;
+      margin-bottom: 88px;
+    }
+
+    .s3-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .s3-h2 {
+      font-size: clamp(1.15rem, 2.4vw, 1.65rem);
+      font-weight: 200;
+      letter-spacing: 0.12em;
+      line-height: 1.95;
+      margin-top: 44px;
+    }
+
+    .s3-body-offset {
+      margin-top: 44px;
+    }
+
+    /* ================================================================
+       SCENE 4: 商品詳細 — スペック
+    ================================================================ */
+    .s4 {
+      padding: 140px 56px 160px;
+      background-color: #ffffff;
+    }
+
+    .s4-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .s4-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 72px;
+    }
+
+    .s4-spec-list {
+      list-style: none;
+      margin-top: 40px;
+    }
+
+    .s4-spec-list li {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid #ebebeb;
+      font-size: clamp(0.82rem, 1.4vw, 0.94rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: #2a2a2a;
+      line-height: 1.8;
+    }
+
+    .s4-spec-list li:first-child {
+      border-top: 1px solid #ebebeb;
+    }
+
+    .s4-spec-key {
+      color: #999999;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      font-weight: 300;
+    }
+
+    .s4-h2 {
+      font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+      font-weight: 200;
+      letter-spacing: 0.12em;
+      line-height: 1.9;
+    }
+
+    .s4-color-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .s4-color-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: #9a9a9a;
+      border: 1px solid #dddddd;
+      flex-shrink: 0;
+    }
+
+    .s4-color-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      font-weight: 300;
+      color: #555555;
+    }
+
+    .s4-price-block {
+      margin-top: 48px;
+    }
+
+    .s4-price-note {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      color: #999999;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    .s4-price {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 200;
+      letter-spacing: 0.04em;
+      color: #111111;
+      line-height: 1;
+    }
+
+    .s4-price small {
+      font-size: 0.45em;
+      letter-spacing: 0.14em;
+      color: #888888;
+      vertical-align: baseline;
+    }
+
+    .s4-price-sub {
+      margin-top: 10px;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: #aaaaaa;
+      font-weight: 300;
+    }
+
+    /* ================================================================
+       SCENE 5: 即納100セットの真実
+    ================================================================ */
+    .s5 {
+      padding: 160px 56px 180px;
+      background-color: #f5f5f3;
+    }
+
+    .s5-inner {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .s5-num {
+      font-size: clamp(4.5rem, 10vw, 7.5rem);
+      font-weight: 200;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      color: #111111;
+      margin-bottom: 60px;
+    }
+
+    .s5-num small {
+      display: block;
+      font-size: 0.18em;
+      letter-spacing: 0.28em;
+      color: #999999;
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+
+    .s5-hline {
+      width: 48px;
+      height: 1px;
+      background-color: #111111;
+      margin-bottom: 56px;
+    }
+
+    /* ================================================================
+       SCENE 6: 決断の導線 — CTA
+    ================================================================ */
+    .s6 {
+      background-color: #111111;
+      padding: 160px 56px 200px;
+      text-align: center;
+    }
+
+    .s6-eyebrow {
+      display: block;
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      font-weight: 300;
+      color: #666666;
+      margin-bottom: 60px;
+    }
+
+    .s6-lead {
+      font-size: clamp(0.88rem, 1.7vw, 1.05rem);
+      font-weight: 200;
+      letter-spacing: 0.1em;
+      line-height: 2.3;
+      color: #bbbbbb;
+      max-width: 500px;
+      margin: 0 auto 96px;
+    }
+
+    .s6-color-note {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      font-weight: 300;
+      color: #555555;
+      border: 1px solid #2a2a2a;
+      padding: 10px 24px;
+      margin-bottom: 40px;
+    }
+
+    /* CTA Button — 品格あるコンバージョン */
+    .cta-btn {
+      display: inline-block;
+      padding: 22px 52px;
+      background-color: #ffffff;
+      color: #111111;
+      text-decoration: none;
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(0.78rem, 1.5vw, 0.92rem);
+      font-weight: 300;
+      letter-spacing: 0.13em;
+      line-height: 1;
+      border: 1px solid #ffffff;
+      transition: background-color 0.4s ease,
+                  color 0.4s ease,
+                  transform 0.4s ease,
+                  box-shadow 0.4s ease;
+    }
+    .cta-btn:hover {
+      background-color: transparent;
+      color: #ffffff;
+      transform: translateY(-4px);
+      box-shadow: 0 18px 48px rgba(255, 255, 255, 0.07);
+    }
+
+    /* ================================================================
+       FOOTER
+    ================================================================ */
+    .footer {
+      background-color: #111111;
+      border-top: 1px solid #1c1c1c;
+      padding: 40px 56px;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 0.57rem;
+      letter-spacing: 0.18em;
+      color: #444444;
+      font-weight: 300;
+    }
+
+    /* ================================================================
+       RESPONSIVE — Tablet 〜860px
+    ================================================================ */
+    @media (max-width: 860px) {
+      .header {
+        padding: 22px 32px;
+      }
+
+      .s1-text {
+        padding: 80px 32px 96px;
+      }
+
+      /* Scene 2: 縦積みレイアウトへ */
+      .s2 {
+        padding: 80px 0 100px;
+      }
+      .s2-grid {
+        grid-template-columns: 1fr;
+      }
+      .s2-img-col {
+        padding: 0 32px;
+      }
+      .s2-text-col {
+        padding: 48px 32px;
+      }
+
+      /* Scene 3 */
+      .s3 {
+        padding: 80px 0 100px;
+      }
+      .s3-inner {
+        padding: 0 32px;
+      }
+      .s3-ph {
+        aspect-ratio: 4 / 3;
+        margin-bottom: 64px;
+      }
+      .s3-block {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+      .s3-h2 {
+        margin-top: 0;
+      }
+      .s3-body-offset {
+        margin-top: 0;
+      }
+
+      /* Scene 4 */
+      .s4 {
+        padding: 100px 32px 120px;
+      }
+      .s4-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      /* Scene 5 & 6 */
+      .s5 {
+        padding: 100px 32px 120px;
+      }
+      .s6 {
+        padding: 100px 32px 140px;
+      }
+
+      .footer {
+        padding: 36px 32px;
+      }
+    }
+
+    /* ================================================================
+       RESPONSIVE — Mobile 〜560px
+    ================================================================ */
+    @media (max-width: 560px) {
+      .header {
+        padding: 20px 24px;
+      }
+
+      .s1-img {
+        height: 72vh;
+        min-height: 440px;
+      }
+      .s1-text {
+        padding: 64px 24px 80px;
+      }
+
+      .s2-img-col {
+        padding: 0 24px;
+      }
+      .s2-text-col {
+        padding: 40px 24px;
+      }
+
+      .s3-inner {
+        padding: 0 24px;
+      }
+      .s3-ph {
+        margin-bottom: 52px;
+      }
+
+      .s4 {
+        padding: 80px 24px 100px;
+      }
+      .s4-spec-list li {
+        grid-template-columns: 110px 1fr;
+        gap: 12px;
+      }
+
+      .s5 {
+        padding: 80px 24px 100px;
+      }
+
+      .s6 {
+        padding: 80px 24px 120px;
+      }
+      .cta-btn {
+        display: block;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      .footer {
+        padding: 32px 24px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       SITE HEADER
+  ============================================================ -->
+  <header class="header" role="banner">
+    <a href="https://www.nakatahanger-shop.com/" aria-label="NAKATA HANGER トップへ">NAKATA HANGER</a>
+    <a href="#scene-06" class="header-cta" aria-label="購入ページへ">購入する</a>
+  </header>
+
+
+  <!-- ============================================================
+       SCENE 1: 静かなる宣誓 — Hero
+  ============================================================ -->
+  <section id="scene-01">
+
+    <!--
+    ┌────────────────────────────────────────────────────────────────┐
+    │  [差し替えポイント] Scene 1 — Hero Image                        │
+    │  このdiv要素をimgタグまたはCSS background-imageに差し替え      │
+    │                                                                │
+    │  推奨サイズ : 1920 × 1080 px 以上                              │
+    │  イメージ   : グレーバーSET-01を装着したスーツのクローゼット全景 │
+    │                                                                │
+    │  imgタグで差し替える場合の例:                                   │
+    │  <img src="hero.jpg"                                           │
+    │       alt="グレーバーSET-01を装着したクローゼット"               │
+    │       style="width:100%; height:90vh; min-height:560px;        │
+    │              object-fit:cover; object-position:center;         │
+    │              display:block;">                                  │
+    └────────────────────────────────────────────────────────────────┘
+    -->
+    <div class="s1-img ph" role="img" aria-label="画像プレースホルダー：グレーバーSET-01を装着したクローゼット">
+      <p>IMAGE PLACEHOLDER<br>グレーバー SET-01 装着クローゼット</p>
+      <p>推奨サイズ: 1920 × 1080 px 以上</p>
+    </div>
+
+    <div class="s1-text">
+      <span class="scene-tag reveal">Scene 01 — 静かなる宣誓</span>
+      <h1 class="s1-h1 reveal d1">クローゼットに選ぶ色は、<br>あなたの審美眼を映す鏡だ。</h1>
+      <span class="s1-sub reveal d2">NAKATA HANGER — SET-01 / BAR : MATT GREY</span>
+    </div>
+
+    <div class="reveal d3">
+      <div class="vline"></div>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       SCENE 2: 色の選択、という審美眼
+  ============================================================ -->
+  <section id="scene-02" class="s2">
+
+    <div class="s2-grid">
+
+      <!-- 画像カラム -->
+      <div class="s2-img-col reveal">
+        <!--
+        ┌────────────────────────────────────────────────────────────────┐
+        │  [差し替えポイント] Scene 2 — Grey Bar Close-up                │
+        │  このdiv要素をimgタグに差し替えてください                      │
+        │                                                                │
+        │  推奨サイズ : 800 × 1067 px（縦長 3:4 比率）                  │
+        │  イメージ   : グレーバー部分の美しい接写・寄り写真              │
+        │                                                                │
+        │  差し替え例:                                                   │
+        │  <img src="grey_bar_detail.jpg"                                │
+        │       alt="SET-01 グレーバー ディテール"                        │
+        │       style="width:100%; display:block;">                      │
+        └────────────────────────────────────────────────────────────────┘
+        -->
+        <div class="s2-ph ph" role="img" aria-label="画像プレースホルダー：グレーバーの接写">
+          <p>IMAGE PLACEHOLDER<br>グレーバー部分の寄り写真</p>
+          <p>推奨: 800 × 1067 px（3:4 比率）</p>
+        </div>
+      </div>
+
+      <!-- テキストカラム -->
+      <div class="s2-text-col">
+        <span class="scene-tag reveal">Scene 02 — 色の選択、という審美眼</span>
+        <div class="hline reveal d1"></div>
+        <div class="body-text reveal d2">
+          <p>ブラウン（木目）は温かみ。<br>グレーは、都市の知性。</p>
+          <p>どちらが正解かではなく、<br>あなたのクローゼットの文脈に、どちらが合うか。</p>
+          <p>ダークスーツを中心とするビジネスウォードローブには、バー部分のマットグレーが持つ静謐な金属質感が、服の色を引き立てます。</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       SCENE 3: なぜ『5本セット』なのか
+  ============================================================ -->
+  <section id="scene-03" class="s3">
+    <div class="s3-inner">
+
+      <!-- フルワイド画像 -->
+      <div class="reveal">
+        <!--
+        ┌────────────────────────────────────────────────────────────────┐
+        │  [差し替えポイント] Scene 3 — SET-01 Five Hangers (Grey Bar)   │
+        │  このdiv要素をimgタグに差し替えてください                      │
+        │                                                                │
+        │  推奨サイズ : 1600 × 700 px（横長 16:7 比率）                 │
+        │  イメージ   : グレーバーSET-01が5本横に整然と並んだ写真        │
+        │                                                                │
+        │  差し替え例:                                                   │
+        │  <img src="set01_grey_five.jpg"                                │
+        │       alt="NAKATA HANGER SET-01 グレーバー 5本セット"          │
+        │       style="width:100%; display:block;">                      │
+        └────────────────────────────────────────────────────────────────┘
+        -->
+        <div class="s3-ph ph" role="img" aria-label="画像プレースホルダー：グレーバーSET-01 5本セット">
+          <p>IMAGE PLACEHOLDER<br>グレーバー SET-01 が5本並んだ写真</p>
+          <p>推奨: 1600 × 700 px（16:7 比率）</p>
+        </div>
+      </div>
+
+      <!-- テキストブロック（二段組） -->
+      <div class="s3-block">
+
+        <div>
+          <span class="scene-tag reveal">Scene 03 — なぜ『5本セット』なのか</span>
+          <h2 class="s3-h2 reveal d1">
+            クローゼットの美しさは<br>
+            『統一感』に宿ります。
+          </h2>
+        </div>
+
+        <div class="body-text s3-body-offset reveal d2">
+          <p>ローテーションで休ませるスーツ、明日着るスーツ。</p>
+          <p>それらを同じ高さ、同じ肩の厚みで管理すること。そして、すべて同じグレーバーで統一されたハンガー列。</p>
+          <p>それが、エグゼクティブのワードローブの最低条件です。</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SCENE 4: 商品詳細 — スペック
+  ============================================================ -->
+  <section id="scene-04" class="s4">
+    <div class="s4-inner">
+
+      <span class="scene-tag reveal">Scene 04 — 商品詳細</span>
+
+      <div class="s4-grid">
+
+        <!-- 画像 -->
+        <div class="reveal">
+          <!--
+          ┌────────────────────────────────────────────────────────────────┐
+          │  [差し替えポイント] Scene 4 — Product Detail Shot              │
+          │  このdiv要素をimgタグに差し替えてください                      │
+          │                                                                │
+          │  推奨サイズ : 800 × 800 px（正方形 1:1）                       │
+          │  イメージ   : グレーバーSET-01の商品単体写真（白背景推奨）     │
+          │                                                                │
+          │  差し替え例:                                                   │
+          │  <img src="product_grey.jpg"                                   │
+          │       alt="SET-01 グレーバー 商品写真"                          │
+          │       style="width:100%; display:block;">                      │
+          └────────────────────────────────────────────────────────────────┘
+          -->
+          <div class="ph" style="aspect-ratio:1/1;" role="img" aria-label="画像プレースホルダー：商品単体写真">
+            <p>IMAGE PLACEHOLDER<br>商品単体写真（白背景推奨）</p>
+            <p>推奨: 800 × 800 px（1:1）</p>
+          </div>
+
+          <div class="s4-color-badge reveal d1">
+            <span class="s4-color-dot"></span>
+            <span class="s4-color-label">BAR COLOR : MATT GREY</span>
+          </div>
+        </div>
+
+        <!-- スペック -->
+        <div>
+          <h2 class="s4-h2 reveal d1">SET-01<br>グレーバー仕様</h2>
+
+          <ul class="s4-spec-list">
+            <li class="reveal d1">
+              <span class="s4-spec-key">セット内容</span>
+              <span>スーツ用ハンガー 5本セット</span>
+            </li>
+            <li class="reveal d1">
+              <span class="s4-spec-key">バー部分</span>
+              <span>マットグレー</span>
+            </li>
+            <li class="reveal d2">
+              <span class="s4-spec-key">本体素材</span>
+              <span>木製（天然木）</span>
+            </li>
+            <li class="reveal d2">
+              <span class="s4-spec-key">肩幅</span>
+              <span>商品ページにてご確認ください</span>
+            </li>
+            <li class="reveal d3">
+              <span class="s4-spec-key">対応スーツ</span>
+              <span>メンズスーツ全般</span>
+            </li>
+            <li class="reveal d3">
+              <span class="s4-spec-key">発送</span>
+              <span>即納（100セット限定）</span>
+            </li>
+          </ul>
+
+          <div class="s4-price-block reveal d3">
+            <p class="s4-price-note">SET PRICE（5本）</p>
+            <p class="s4-price">
+              <a href="https://www.nakatahanger-shop.com/?pid=69751649"
+                 target="_blank" rel="noopener noreferrer"
+                 style="color:inherit; text-decoration:none; border-bottom:1px solid #dddddd;">
+                商品ページで確認
+              </a>
+            </p>
+            <p class="s4-price-sub">※ポイント還元あり / 送料については商品ページをご確認ください</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SCENE 5: 即納100セットの真実
+  ============================================================ -->
+  <section id="scene-05" class="s5">
+    <div class="s5-inner">
+
+      <span class="scene-tag reveal">Scene 05 — 即納100セットの真実</span>
+
+      <div class="s5-num reveal d1" aria-label="グレーバー即納可能数: 100セットのみ">
+        <small>GREY BAR — IMMEDIATE DELIVERY</small>
+        100
+      </div>
+
+      <div class="s5-hline reveal d2"></div>
+
+      <div class="body-text reveal d3">
+        <p>新生活シーズンを迎える春。クローゼットのインフラを整えたいというご要望が急増します。</p>
+        <p>職人が一つひとつ仕上げるNAKATA HANGERにおいて、グレーバー仕様のSET-01として現在確実にお待たせせず『即納』できるのは<strong style="font-weight: 400;">【100セットのみ】</strong>となります。</p>
+        <p>また、今回の投資で付与されるポイントは、ぜひ次回、ネクタイハンガーやメンテナンス用品を揃える際の『さらなる美意識へのパスポート』としてご活用ください。</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SCENE 6: 決断の導線 — CTA
+  ============================================================ -->
+  <section id="scene-06" class="s6">
+
+    <span class="s6-eyebrow reveal">Scene 06 — 決断の導線</span>
+
+    <p class="s6-lead reveal d1">
+      あなたのクローゼットに、<br>
+      静かな都市の秩序をもたらす時です。
+    </p>
+
+    <div class="reveal d2">
+      <p class="s6-color-note">BAR COLOR : MATT GREY</p>
+    </div>
+
+    <div class="reveal d3">
+      <a
+        href="https://www.nakatahanger-shop.com/?pid=69751649"
+        class="cta-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="グレーバー仕様 SET-01（5本セット）を購入する — 外部サイトへ移動"
+      >
+        グレーバー仕様 SET-01（5本セット）を手に入れる
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <p>© NAKATA HANGER. All Rights Reserved.</p>
+  </footer>
+
+
+  <!-- ============================================================
+       Intersection Observer — Scroll Reveal
+  ============================================================ -->
+  <script>
+  (function () {
+    'use strict';
+
+    var targets = document.querySelectorAll('.reveal');
+
+    /* 非対応ブラウザのフォールバック */
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function (el) { el.classList.add('in-view'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      }
+    );
+
+    targets.forEach(function (el) { observer.observe(el); });
+  }());
+  </script>
+
+</body>
+</html>
