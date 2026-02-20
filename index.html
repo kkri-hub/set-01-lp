@@ -4,6 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NAKATA HANGER — SET-01 フェルトバー グレー（5本セット）</title>
+
+  <!-- SEO / SNS -->
+  <meta name="description" content="スーツのために設計された、最も静かな選択。NAKATA HANGER SET-01 フェルトバー グレー（5本セット）。国内製造、即日発送対応。">
+  <meta property="og:title" content="NAKATA HANGER — SET-01 フェルトバー グレー（5本セット）">
+  <meta property="og:description" content="クローゼットの完成は、色で決まる。スーツのために設計された、最も静かな選択。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kkri-hub.github.io/set-01-lp/">
+  <!--
+    og:image を設定する場合（推奨: 1200×630px）:
+    <meta property="og:image" content="https://kkri-hub.github.io/set-01-lp/ogp.jpg">
+  -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
@@ -29,6 +41,14 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
+    }
+
+    /* ================================================================
+       スクロールオフセット — 固定ヘッダー分を補正
+    ================================================================ */
+    section[id],
+    nav[id] {
+      scroll-margin-top: 80px;
     }
 
     /* ================================================================
@@ -146,7 +166,7 @@
        CTA BUTTON VARIANTS
     ================================================================ */
 
-    /* 白ボタン（ダーク背景用：FV・クロージング） */
+    /* 白ボタン（ダーク背景用） */
     .cta-btn {
       display: inline-block;
       padding: 22px 52px;
@@ -171,7 +191,7 @@
       box-shadow: 0 18px 48px rgba(255, 255, 255, 0.07);
     }
 
-    /* 黒ボタン（ライト背景用：ペルソナ・スペックセクション） */
+    /* 黒ボタン（ライト背景用） */
     .cta-btn--dark {
       background-color: #111111;
       color: #ffffff;
@@ -183,7 +203,7 @@
       box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
     }
 
-    /* CTA ラッパー（上余白） */
+    /* CTA ラッパー */
     .cta-wrap {
       margin-top: 64px;
     }
@@ -196,15 +216,69 @@
       letter-spacing: 0.18em;
       font-weight: 300;
     }
-    .cta-note--light {
-      color: rgba(255, 255, 255, 0.38);
+    .cta-note--light { color: rgba(255, 255, 255, 0.38); }
+    .cta-note--dark  { color: #bbbbbb; }
+
+    /* ================================================================
+       STICKY CTA BAR
+    ================================================================ */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      background-color: rgba(14, 14, 14, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 14px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      transform: translateY(100%);
+      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .cta-note--dark {
-      color: #bbbbbb;
+
+    .sticky-bar.is-visible {
+      transform: translateY(0);
+    }
+
+    .sticky-bar-text {
+      font-size: 0.66rem;
+      font-weight: 200;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.52);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sticky-bar-btn {
+      display: inline-block;
+      flex-shrink: 0;
+      padding: 12px 32px;
+      background-color: #ffffff;
+      color: #111111;
+      text-decoration: none;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.13em;
+      line-height: 1;
+      border: 1px solid #ffffff;
+      white-space: nowrap;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .sticky-bar-btn:hover {
+      background-color: transparent;
+      color: #ffffff;
     }
 
     /* ================================================================
-       SCENE 1: ファーストビュー — Hero
+       SCENE 1: ファーストビュー
     ================================================================ */
     .s1-hero {
       position: relative;
@@ -413,6 +487,10 @@
       margin-top: 64px;
     }
 
+    .ba-cell {
+      /* グリッドセル */
+    }
+
     .ba-label {
       display: block;
       font-size: 0.56rem;
@@ -425,12 +503,9 @@
     .ba-ph {
       /*
         [差し替えポイント] Before/After 画像
-        このdivをimgタグに差し替えてください
-
         推奨サイズ : 600 × 800 px（縦長 3:4 比率）
         差し替え例 :
-        <img src="before.jpg"
-             alt="Before: バラバラなハンガー"
+        <img src="before.jpg" alt="Before" loading="lazy"
              style="width:100%; display:block; object-fit:cover;">
       */
       aspect-ratio: 3 / 4;
@@ -478,6 +553,10 @@
       text-align: center;
     }
 
+    .s-philosophy .cta-wrap {
+      margin-top: 72px;
+    }
+
     /* ================================================================
        #spec — 仕様
     ================================================================ */
@@ -491,12 +570,8 @@
       margin: 0 auto;
     }
 
-    .s-spec-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-      margin-top: 72px;
+    .s-spec-header {
+      margin-bottom: 72px;
     }
 
     .s-spec-h2 {
@@ -504,7 +579,15 @@
       font-weight: 200;
       letter-spacing: 0.12em;
       line-height: 1.9;
-      margin-bottom: 40px;
+      margin-top: 44px;
+      margin-bottom: 0;
+    }
+
+    .s-spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
     }
 
     .s4-color-badge {
@@ -528,6 +611,37 @@
       letter-spacing: 0.2em;
       font-weight: 300;
       color: #555555;
+    }
+
+    /* 価格表示 */
+    .spec-price {
+      margin-top: 40px;
+      padding-top: 36px;
+      border-top: 1px solid #ebebeb;
+    }
+
+    .spec-price-label {
+      display: block;
+      font-size: 0.58rem;
+      letter-spacing: 0.24em;
+      color: #aaaaaa;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    .spec-price-link {
+      font-size: clamp(0.82rem, 1.45vw, 0.94rem);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: #111111;
+      text-decoration: none;
+      border-bottom: 1px solid #cccccc;
+      padding-bottom: 2px;
+      transition: border-color 0.3s ease;
+    }
+
+    .spec-price-link:hover {
+      border-color: #111111;
     }
 
     /* 箇条書きリスト（仕様・発送共通） */
@@ -605,15 +719,6 @@
       margin-bottom: 64px;
     }
 
-    .s-closing-h2 {
-      font-size: clamp(1.15rem, 2.4vw, 1.65rem);
-      font-weight: 200;
-      letter-spacing: 0.14em;
-      line-height: 1.95;
-      color: #ffffff;
-      margin-bottom: 48px;
-    }
-
     .s-closing-lead {
       font-size: clamp(0.88rem, 1.7vw, 1.05rem);
       font-weight: 200;
@@ -657,17 +762,14 @@
         padding: 22px 32px;
       }
 
-      /* FV */
       .s1-copy {
         padding: 0 32px;
       }
 
-      /* Anchor nav */
       .anchor-nav {
         padding: 56px 32px 64px;
       }
 
-      /* Scene 2 */
       .s2 {
         padding: 80px 0 100px;
       }
@@ -681,23 +783,19 @@
         padding: 48px 32px;
       }
 
-      /* Persona */
       .persona {
         padding: 80px 32px 100px;
       }
 
-      /* Before/After */
       .ba-grid {
         grid-template-columns: 1fr 1fr;
         gap: 16px;
       }
 
-      /* Philosophy */
       .s-philosophy {
         padding: 80px 32px 100px;
       }
 
-      /* Spec */
       .s-spec {
         padding: 80px 32px 100px;
       }
@@ -706,18 +804,20 @@
         gap: 48px;
       }
 
-      /* Shipping */
       .s-shipping {
         padding: 80px 32px 100px;
       }
 
-      /* Closing */
       .s-closing {
         padding: 100px 32px 140px;
       }
 
       .footer {
         padding: 36px 32px;
+      }
+
+      .sticky-bar {
+        padding: 14px 32px;
       }
     }
 
@@ -729,7 +829,6 @@
         padding: 20px 24px;
       }
 
-      /* FV */
       .s1-img {
         height: 72vh;
         min-height: 440px;
@@ -738,7 +837,6 @@
         padding: 0 24px;
       }
 
-      /* Anchor nav */
       .anchor-nav {
         padding: 48px 24px 56px;
       }
@@ -752,7 +850,6 @@
         min-width: unset;
       }
 
-      /* Scene 2 */
       .s2-img-col {
         padding: 0 24px;
       }
@@ -760,12 +857,10 @@
         padding: 40px 24px;
       }
 
-      /* Persona */
       .persona {
         padding: 64px 24px 80px;
       }
 
-      /* Before/After */
       .ba-grid {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -774,27 +869,22 @@
         grid-column: unset;
       }
 
-      /* Philosophy */
       .s-philosophy {
         padding: 64px 24px 80px;
       }
 
-      /* Spec */
       .s-spec {
         padding: 64px 24px 80px;
       }
 
-      /* Shipping */
       .s-shipping {
         padding: 64px 24px 80px;
       }
 
-      /* Closing */
       .s-closing {
         padding: 80px 24px 120px;
       }
 
-      /* CTA block */
       .cta-btn {
         display: block;
         max-width: 360px;
@@ -805,6 +895,18 @@
 
       .footer {
         padding: 32px 24px;
+      }
+
+      /* スティッキーバーはモバイルでテキストを省略 */
+      .sticky-bar {
+        padding: 12px 24px;
+      }
+      .sticky-bar-text {
+        display: none;
+      }
+      .sticky-bar-btn {
+        width: 100%;
+        text-align: center;
       }
     }
 
@@ -831,10 +933,8 @@
       <!--
       ┌────────────────────────────────────────────────────────────────┐
       │  [差し替えポイント] Hero Image                                  │
-      │                                                                │
       │  推奨サイズ : 1920 × 1080 px 以上                              │
       │  イメージ   : グレーバーSET-01を装着したスーツのクローゼット全景 │
-      │                                                                │
       │  差し替え例:                                                   │
       │  <img src="hero.jpg"                                           │
       │       alt="グレーバーSET-01を装着したクローゼット"               │
@@ -855,7 +955,8 @@
         <h1 class="s1-h1 reveal d1">クローゼットの完成は、<br>色で決まる。</h1>
         <p class="s1-subcopy reveal d2">スーツのために設計された、最も静かな選択。</p>
         <span class="s1-sub reveal d3">フェルトバー グレー / SET-01（5本セット）</span>
-        <div class="s1-cta-wrap reveal d4">
+        <!-- FV CTA: 遅延を最短（d1）に設定 -->
+        <div class="s1-cta-wrap reveal d1">
           <a
             href="https://www.nakatahanger-shop.com/?pid=69751649"
             class="cta-btn"
@@ -910,12 +1011,9 @@
         <!--
         ┌────────────────────────────────────────────────────────────────┐
         │  [差し替えポイント] Scene 2 — Grey Bar Close-up                │
-        │                                                                │
         │  推奨サイズ : 800 × 1067 px（縦長 3:4 比率）                  │
-        │  イメージ   : グレーバー部分の美しい接写・寄り写真              │
-        │                                                                │
         │  差し替え例:                                                   │
-        │  <img src="grey_bar_detail.jpg"                                │
+        │  <img src="grey_bar_detail.jpg" loading="lazy"                 │
         │       alt="SET-01 フェルトバー グレー ディテール"               │
         │       style="width:100%; display:block;">                      │
         └────────────────────────────────────────────────────────────────┘
@@ -974,8 +1072,8 @@
           ┌──────────────────────────────────────────────────────────────┐
           │  [差し替えポイント] Before 画像                               │
           │  推奨: 600 × 800 px（3:4）                                   │
-          │  <img src="before.jpg" alt="Before" style="width:100%;       │
-          │        display:block; object-fit:cover;">                    │
+          │  <img src="before.jpg" loading="lazy" alt="Before"           │
+          │        style="width:100%; display:block; object-fit:cover;"> │
           └──────────────────────────────────────────────────────────────┘
           -->
           <div class="ba-ph ph" role="img" aria-label="Before: バラバラなハンガー">
@@ -989,8 +1087,8 @@
           ┌──────────────────────────────────────────────────────────────┐
           │  [差し替えポイント] After 画像                                │
           │  推奨: 600 × 800 px（3:4）                                   │
-          │  <img src="after.jpg" alt="After" style="width:100%;         │
-          │        display:block; object-fit:cover;">                    │
+          │  <img src="after.jpg" loading="lazy" alt="After"             │
+          │        style="width:100%; display:block; object-fit:cover;"> │
           └──────────────────────────────────────────────────────────────┘
           -->
           <div class="ba-ph ph" role="img" aria-label="After: グレーバーSET-01で統一されたクローゼット">
@@ -1026,7 +1124,7 @@
       <h2 class="persona-h2 reveal d2">贈り物は、相手の生活を整えるものが強い。</h2>
 
       <div class="body-text reveal d3">
-        <p>男性への贈り物で失敗が少ないのは、<br>「趣味」ではなく「日常の質」を上げるもの。</p>
+        <p>失敗が少ない贈り物は、<br>「趣味」ではなく「日常の質」を上げるもの。</p>
         <p>ハンガーは毎日使う道具でありながら、<br>自分では後回しにされがちな領域です。だから、価値が残ります。</p>
       </div>
 
@@ -1098,6 +1196,16 @@
         <p>視線を奪わず、印象を整える色。<br>フェルトバー グレーは、"整えるための色"として設計されています。</p>
       </div>
 
+      <!-- 色の思想を読んだ後のCTA -->
+      <div class="cta-wrap reveal d4">
+        <a
+          href="https://www.nakatahanger-shop.com/?pid=69751649"
+          class="cta-btn cta-btn--dark"
+          target="_blank"
+          rel="noopener noreferrer"
+        >グレーを選ぶ</a>
+      </div>
+
     </div>
   </section>
 
@@ -1108,7 +1216,12 @@
   <section id="spec" class="s-spec">
     <div class="s-spec-inner">
 
-      <span class="scene-tag reveal">仕様</span>
+      <!-- ヘッダー：他セクションと構造を統一 -->
+      <div class="s-spec-header">
+        <span class="scene-tag reveal">仕様</span>
+        <div class="hline reveal d1"></div>
+        <h2 class="s-spec-h2 reveal d2">SET-01 グレー仕様</h2>
+      </div>
 
       <div class="s-spec-grid">
 
@@ -1117,12 +1230,9 @@
           <!--
           ┌────────────────────────────────────────────────────────────────┐
           │  [差し替えポイント] Product Shot                               │
-          │                                                                │
           │  推奨サイズ : 800 × 800 px（正方形 1:1）                       │
-          │  イメージ   : グレーバーSET-01の商品単体写真（白背景推奨）     │
-          │                                                                │
           │  差し替え例:                                                   │
-          │  <img src="product_grey.jpg"                                   │
+          │  <img src="product_grey.jpg" loading="lazy"                   │
           │       alt="SET-01 フェルトバー グレー"                         │
           │       style="width:100%; display:block;">                      │
           └────────────────────────────────────────────────────────────────┘
@@ -1139,9 +1249,8 @@
 
         <!-- スペック -->
         <div>
-          <h2 class="s-spec-h2 reveal d1">SET-01 グレー仕様</h2>
 
-          <ul class="item-list reveal d2" aria-label="商品仕様">
+          <ul class="item-list reveal d1" aria-label="商品仕様">
             <li>フェルトバー仕様（滑り抑制）</li>
             <li>スーツ／ジャケット対応設計</li>
             <li>同色5本セット</li>
@@ -1150,8 +1259,19 @@
             <li>即日発送対応</li>
           </ul>
 
-          <div class="body-text reveal d3">
+          <div class="body-text reveal d2">
             <p>日常に馴染み、長く使える設計です。</p>
+          </div>
+
+          <!-- 価格へのリンク -->
+          <div class="spec-price reveal d3">
+            <span class="spec-price-label">PRICE</span>
+            <a
+              href="https://www.nakatahanger-shop.com/?pid=69751649"
+              class="spec-price-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >価格・購入詳細は商品ページで確認</a>
           </div>
 
           <div class="cta-wrap reveal d4">
@@ -1177,17 +1297,28 @@
 
       <span class="scene-tag reveal">ご注文について</span>
       <div class="hline reveal d1"></div>
-      <h2 class="s-shipping-h2 reveal d2">ご注文について</h2>
+      <!-- h2は省略（scene-tagと内容が同一のため） -->
 
-      <ul class="item-list reveal d3" aria-label="ご注文について">
+      <ul class="item-list reveal d2" aria-label="ご注文について">
         <li>即日発送（営業日内）</li>
         <li>ギフト包装対応可</li>
         <li>納品書の同梱可否を選択可能</li>
         <li>追加購入でも同仕様でお届け</li>
       </ul>
 
-      <div class="body-text reveal d4">
+      <div class="body-text reveal d3">
         <p>安心して、整える選択を。</p>
+      </div>
+
+      <!-- 発送情報を確認した直後のCTA -->
+      <div class="cta-wrap reveal d4">
+        <a
+          href="https://www.nakatahanger-shop.com/?pid=69751649"
+          class="cta-btn cta-btn--dark"
+          target="_blank"
+          rel="noopener noreferrer"
+        >クローゼットを整える</a>
+        <span class="cta-note cta-note--dark">※即日発送対応</span>
       </div>
 
     </div>
@@ -1230,35 +1361,68 @@
 
 
   <!-- ============================================================
-       Intersection Observer — Scroll Reveal
+       STICKY CTA BAR
+  ============================================================ -->
+  <div id="sticky-bar" class="sticky-bar" role="complementary" aria-label="購入導線">
+    <span class="sticky-bar-text">SET-01 フェルトバー グレー（5本セット）</span>
+    <a
+      href="https://www.nakatahanger-shop.com/?pid=69751649"
+      class="sticky-bar-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+    >クローゼットを整える</a>
+  </div>
+
+
+  <!-- ============================================================
+       SCRIPTS
   ============================================================ -->
   <script>
   (function () {
     'use strict';
 
+    /* ---- Scroll Reveal ---- */
     var targets = document.querySelectorAll('.reveal');
 
     if (!('IntersectionObserver' in window)) {
       targets.forEach(function (el) { el.classList.add('in-view'); });
-      return;
+    } else {
+      var revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+      targets.forEach(function (el) { revealObserver.observe(el); });
     }
 
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
-      }
-    );
+    /* ---- Sticky CTA Bar ---- */
+    var stickyBar     = document.getElementById('sticky-bar');
+    var fvSection     = document.getElementById('scene-01');
+    var closingSection = document.getElementById('closing');
 
-    targets.forEach(function (el) { observer.observe(el); });
+    if (stickyBar && fvSection && closingSection) {
+      var onScroll = function () {
+        var fvBottom     = fvSection.getBoundingClientRect().bottom;
+        var closingTop   = closingSection.getBoundingClientRect().top;
+        var windowHeight = window.innerHeight;
+
+        /* FVを過ぎてからクロージングに入るまで表示 */
+        if (fvBottom < 0 && closingTop > windowHeight) {
+          stickyBar.classList.add('is-visible');
+        } else {
+          stickyBar.classList.remove('is-visible');
+        }
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
   }());
   </script>
 
