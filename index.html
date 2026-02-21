@@ -12,6 +12,10 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kkri-hub.github.io/set-01-lp/">
   <meta property="og:image" content="https://kkri-hub.github.io/set-01-lp/ogp.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://kkri-hub.github.io/set-01-lp/ogp.svg">
+  <link rel="canonical" href="https://kkri-hub.github.io/set-01-lp/">
+  <meta name="theme-color" content="#2d3d35">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,27 +69,6 @@
     .reveal.d2 { transition-delay: 0.34s; }
     .reveal.d3 { transition-delay: 0.50s; }
     .reveal.d4 { transition-delay: 0.66s; }
-
-    /* ================================================================
-       IMAGE PLACEHOLDER
-       差し替え時: このdivをimgタグに変更
-    ================================================================ */
-    .ph {
-      background-color: #d4d4d4;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-    .ph p {
-      font-size: 0.58rem;
-      letter-spacing: 0.16em;
-      color: rgba(17, 17, 17, 0.28);
-      text-align: center;
-      line-height: 2;
-      font-weight: 300;
-    }
 
     /* ================================================================
        SITE HEADER
@@ -290,10 +273,6 @@
       min-height: 560px;
       display: block;
       background: linear-gradient(160deg, #d8e4dc 0%, #e2ebe5 45%, #cfdbd3 100%);
-    }
-
-    .s1-overlay-bg {
-      display: none;
     }
 
     .s1-copy {
@@ -544,40 +523,6 @@
       margin-top: 72px;
     }
 
-    /* 箇条書きリスト（発送セクション） */
-    .item-list {
-      list-style: none;
-      margin-top: 12px;
-      margin-bottom: 48px;
-    }
-
-    .item-list li {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      padding: 17px 0;
-      border-bottom: 1px solid #ebebeb;
-      font-size: clamp(0.84rem, 1.5vw, 0.96rem);
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      color: #2a2a2a;
-      line-height: 1.8;
-    }
-
-    .item-list li:first-child {
-      border-top: 1px solid #ebebeb;
-    }
-
-    .item-list li::before {
-      content: '';
-      display: block;
-      width: 16px;
-      height: 1px;
-      background-color: #c8c8c8;
-      flex-shrink: 0;
-      position: relative;
-      top: -0.1em;
-    }
 
     /* ================================================================
        クロージング CTA
@@ -779,8 +724,6 @@
       -->
       <div class="s1-img" role="img" aria-label="グレーバーSET-01を装着したクローゼット"></div>
 
-      <div class="s1-overlay-bg"></div>
-
       <div class="s1-copy">
         <span class="scene-tag reveal">NAKATA HANGER — SET-01</span>
         <h1 class="s1-h1 reveal d1">新しい朝、整ったクローゼットから。</h1>
@@ -847,17 +790,17 @@
       <div class="feature-grid reveal d4">
         <div class="feature-item">
           <span class="feature-label">— 肩を守る</span>
-          <p class="feature-title">フェルトバーが、<br>肩のラインを支える。</p>
+          <h3 class="feature-title">フェルトバーが、<br>肩のラインを支える。</h3>
           <p class="feature-text">滑りを抑え、余計な跡を残しません。スーツの型を長く保つ設計です。</p>
         </div>
         <div class="feature-item">
           <span class="feature-label">— グレーを選ぶ</span>
-          <p class="feature-title">服の色を問わず、<br>背景になる色。</p>
+          <h3 class="feature-title">服の色を問わず、<br>背景になる色。</h3>
           <p class="feature-text">黒ほど強くなく、木色ほど主張しない。最も静かな選択です。</p>
         </div>
         <div class="feature-item">
           <span class="feature-label">— 5本という単位</span>
-          <p class="feature-title">整えるための、<br>最小にして十分な数。</p>
+          <h3 class="feature-title">整えるための、<br>最小にして十分な数。</h3>
           <p class="feature-text">主力スーツの一列分。全部でなくていい。まず一列から。</p>
         </div>
       </div>
@@ -884,27 +827,27 @@
       <span class="scene-tag reveal">— こんな方へ</span>
       <div class="hline reveal d1"></div>
 
-      <h2 class="for-whom-h2 reveal d2">用途から選ぶ</h2>
+      <h2 class="for-whom-h2 reveal d2">あなたは、どう使う？</h2>
 
       <div class="for-whom-grid reveal d3">
 
-        <div class="for-whom-card">
+        <div class="for-whom-card" role="article">
           <span class="for-whom-card-sub">自分用</span>
-          <p class="for-whom-card-title">新生活の最初の道具として</p>
+          <h3 class="for-whom-card-title">新生活の最初の道具として</h3>
           <p class="for-whom-card-text">新しい環境に踏み出すとき、スーツを守るハンガーから。クローゼットの背景を、最初に整える選択です。</p>
           <a href="https://www.nakatahanger-shop.com/?pid=69751649" class="for-whom-card-cta" target="_blank" rel="noopener noreferrer">自分用に選ぶ</a>
         </div>
 
-        <div class="for-whom-card">
+        <div class="for-whom-card" role="article">
           <span class="for-whom-card-sub">贈り物</span>
-          <p class="for-whom-card-title">旅立ちへの、実用的な贈り物として</p>
+          <h3 class="for-whom-card-title">旅立ちへの、実用的な贈り物として</h3>
           <p class="for-whom-card-text">男性への贈り物で失敗が少ないのは、趣味ではなく日常の質を上げるもの。グレーは、相手の好みを邪魔しない色です。</p>
           <a href="https://www.nakatahanger-shop.com/?pid=69751649" class="for-whom-card-cta" target="_blank" rel="noopener noreferrer">贈り物として選ぶ</a>
         </div>
 
-        <div class="for-whom-card">
+        <div class="for-whom-card" role="article">
           <span class="for-whom-card-sub">追加購入</span>
-          <p class="for-whom-card-title">揃えることで、完成させる</p>
+          <h3 class="for-whom-card-title">揃えることで、完成させる</h3>
           <p class="for-whom-card-text">良いものは、揃ったときに力を発揮します。SET-01は同色・同仕様で整えるための単位。迷わず同じ判断で追加できます。</p>
           <a href="https://www.nakatahanger-shop.com/?pid=69751649" class="for-whom-card-cta" target="_blank" rel="noopener noreferrer">前回の続きに、もう5本</a>
         </div>
