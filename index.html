@@ -351,6 +351,7 @@
     .s-empathy {
       padding: 120px 56px 140px;
       text-align: center;
+      border-top: 1px solid #e8e8e6;
     }
 
     .s-empathy-inner {
@@ -379,8 +380,9 @@
        SOLUTION — 解決策 + 3特長
     ================================================================ */
     .s-solution {
-      background-color: #f5f5f3;
+      background-color: #ffffff;
       padding: 140px 56px 160px;
+      border-top: 1px solid #e8e8e6;
     }
 
     .s-solution-inner {
@@ -397,6 +399,18 @@
       margin-bottom: 48px;
     }
 
+    .product-img-wrap {
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .product-img {
+      max-width: 520px;
+      width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+
     .feature-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -404,6 +418,21 @@
       margin-top: 72px;
       border-top: 1px solid #e0e0e0;
       padding-top: 56px;
+    }
+
+    .feature-item {
+      border-top: 1px solid #e0e0e0;
+      padding-top: 28px;
+    }
+
+    .feature-num {
+      display: block;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      font-weight: 200;
+      color: #c8d4ce;
+      margin-bottom: 18px;
     }
 
     .feature-label {
@@ -438,6 +467,7 @@
     ================================================================ */
     .s-for-whom {
       padding: 140px 56px 160px;
+      border-top: 1px solid #e8e8e6;
     }
 
     .s-for-whom-inner {
@@ -460,6 +490,11 @@
       gap: 40px;
       border-top: 1px solid #ebebeb;
       padding-top: 56px;
+    }
+
+    .for-whom-card {
+      border-left: 1px solid #d0d8d4;
+      padding-left: 28px;
     }
 
     .for-whom-card-sub {
@@ -487,24 +522,6 @@
       line-height: 2.1;
       letter-spacing: 0.06em;
       color: #555555;
-      margin-bottom: 28px;
-    }
-
-    .for-whom-card-cta {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 0.78rem;
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      color: #2d3d35;
-      border-bottom: 1px solid #a8bdb4;
-      padding-bottom: 2px;
-      text-decoration: none;
-      display: inline-block;
-      transition: border-color 0.3s ease;
-    }
-
-    .for-whom-card-cta:hover {
-      border-color: #2d3d35;
     }
 
     /* ================================================================
@@ -514,6 +531,7 @@
       background-color: #f5f5f3;
       padding: 140px 56px 160px;
       text-align: center;
+      border-top: 1px solid #e0e0de;
     }
 
     .s-philosophy-inner {
@@ -587,7 +605,46 @@
       letter-spacing: 0.3em;
       font-weight: 200;
       color: rgba(255, 255, 255, 0.28);
-      margin-bottom: 40px;
+      margin-bottom: 32px;
+    }
+
+    .closing-spec {
+      margin: 0 auto 48px;
+      display: block;
+      width: fit-content;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 20px 40px;
+    }
+
+    .closing-price {
+      display: block;
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 200;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .closing-price-note {
+      display: block;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      font-weight: 200;
+      color: rgba(255, 255, 255, 0.38);
+      margin-bottom: 24px;
+    }
+
+    .closing-made {
+      display: inline-block;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.26em;
+      font-weight: 200;
+      color: rgba(255, 255, 255, 0.46);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 6px 16px;
     }
 
     /* ================================================================
@@ -724,8 +781,6 @@
        SITE HEADER
   ============================================================ -->
   <header class="header" role="banner">
-    <a href="https://www.nakatahanger-shop.com/" aria-label="NAKATA HANGER トップへ">NAKATA HANGER</a>
-    <a href="#closing" class="header-cta" aria-label="購入ページへ">購入する</a>
   </header>
 
 
@@ -807,22 +862,37 @@
       <h2 class="solution-h2 reveal d2">5本で、一列が変わる。</h2>
 
       <div class="body-text reveal d3">
-        <p>SET-01 フェルトバー グレーは、<br>主力スーツの一列を統一するために設計されました。</p>
+        <p>SET-01 フェルトバー グレーは、<br>主力スーツの一列を統一するために設計されました。<br>国内製造。長く使える品質です。</p>
         <p>色が揃うだけで、視界は変わります。<br>バラバラだったクローゼットが、静かに整っていく。</p>
+      </div>
+
+      <div class="product-img-wrap reveal d4">
+        <img
+          class="product-img"
+          src="images/o1gray.png"
+          alt="NAKATA HANGER SET-01 フェルトバー グレー 5本セット"
+          loading="lazy"
+          decoding="async"
+          width="800"
+          height="640"
+        >
       </div>
 
       <div class="feature-grid reveal d4">
         <div class="feature-item">
+          <span class="feature-num">01</span>
           <span class="feature-label">— 肩を守る</span>
           <h3 class="feature-title">フェルトバーが、<br>肩のラインを支える。</h3>
           <p class="feature-text">滑りを抑え、余計な跡を残しません。スーツの型を長く保つ設計です。</p>
         </div>
         <div class="feature-item">
+          <span class="feature-num">02</span>
           <span class="feature-label">— グレーを選ぶ</span>
           <h3 class="feature-title">服の色を問わず、<br>背景になる色。</h3>
           <p class="feature-text">黒ほど強くなく、木色ほど主張しない。最も静かな選択です。</p>
         </div>
         <div class="feature-item">
+          <span class="feature-num">03</span>
           <span class="feature-label">— 5本という単位</span>
           <h3 class="feature-title">整えるための、<br>最小にして十分な数。</h3>
           <p class="feature-text">主力スーツの一列分。全部でなくていい。まず一列から。</p>
@@ -855,27 +925,33 @@
 
       <div class="for-whom-grid reveal d3">
 
-        <div class="for-whom-card" role="article">
+        <div class="for-whom-card">
           <span class="for-whom-card-sub">自分用</span>
           <h3 class="for-whom-card-title">新生活の最初の道具として</h3>
           <p class="for-whom-card-text">新しい環境に踏み出すとき、スーツを守るハンガーから。クローゼットの背景を、最初に整える選択です。</p>
-          <a href="https://www.nakatahanger-shop.com/?pid=69751649" class="for-whom-card-cta" target="_blank" rel="noopener noreferrer">自分用に選ぶ</a>
         </div>
 
-        <div class="for-whom-card" role="article">
+        <div class="for-whom-card">
           <span class="for-whom-card-sub">贈り物</span>
           <h3 class="for-whom-card-title">旅立ちへの、実用的な贈り物として</h3>
           <p class="for-whom-card-text">男性への贈り物で失敗が少ないのは、趣味ではなく日常の質を上げるもの。グレーは、相手の好みを邪魔しない色です。</p>
-          <a href="https://www.nakatahanger-shop.com/?pid=69751649" class="for-whom-card-cta" target="_blank" rel="noopener noreferrer">贈り物として選ぶ</a>
         </div>
 
-        <div class="for-whom-card" role="article">
+        <div class="for-whom-card">
           <span class="for-whom-card-sub">追加購入</span>
           <h3 class="for-whom-card-title">揃えることで、完成させる</h3>
           <p class="for-whom-card-text">良いものは、揃ったときに力を発揮します。SET-01は同色・同仕様で整えるための単位。迷わず同じ判断で追加できます。</p>
-          <a href="https://www.nakatahanger-shop.com/?pid=69751649" class="for-whom-card-cta" target="_blank" rel="noopener noreferrer">前回の続きに、もう5本</a>
         </div>
 
+      </div>
+
+      <div class="cta-wrap reveal d4">
+        <a
+          href="https://www.nakatahanger-shop.com/?pid=69751649"
+          class="cta-btn cta-btn--dark"
+          target="_blank"
+          rel="noopener noreferrer"
+        >クローゼットを整える</a>
       </div>
 
     </div>
@@ -928,6 +1004,10 @@
 
     <div class="reveal d2">
       <span class="s-closing-sub">フェルトバー グレー / SET-01（5本セット）</span>
+      <div class="closing-spec">
+        <span class="closing-price">¥19,250</span>
+        <span class="closing-price-note">税込</span>
+      </div>
       <a
         href="https://www.nakatahanger-shop.com/?pid=69751649"
         class="cta-btn"
