@@ -272,10 +272,10 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(
-        to bottom,
-        rgba(245, 248, 246, 0.55) 0%,
-        rgba(245, 248, 246, 0.18) 45%,
-        rgba(245, 248, 246, 0) 72%
+        to top,
+        rgba(15, 22, 18, 0.58) 0%,
+        rgba(15, 22, 18, 0.18) 38%,
+        rgba(15, 22, 18, 0) 62%
       );
       z-index: 1;
       pointer-events: none;
@@ -295,15 +295,19 @@
       inset: 0;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 110px 56px 0;
-      text-align: center;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 0 72px 72px;
+      text-align: left;
       z-index: 2;
     }
 
+    .s1-copy-panel {
+      max-width: 560px;
+    }
+
     .s1-copy .scene-tag {
-      color: rgba(45, 61, 53, 0.55);
+      color: rgba(255, 255, 255, 0.52);
     }
 
     .s1-h1 {
@@ -311,7 +315,7 @@
       font-weight: 200;
       letter-spacing: 0.14em;
       line-height: 1.85;
-      color: #1e2e26;
+      color: #ffffff;
     }
 
     .s1-subcopy {
@@ -319,9 +323,9 @@
       font-weight: 200;
       letter-spacing: 0.12em;
       line-height: 2.1;
-      color: rgba(30, 46, 38, 0.7);
+      color: rgba(255, 255, 255, 0.72);
       margin-top: 20px;
-      max-width: 560px;
+      max-width: 480px;
     }
 
     .s1-sub {
@@ -331,7 +335,7 @@
       font-size: 0.62rem;
       letter-spacing: 0.3em;
       font-weight: 200;
-      color: rgba(30, 46, 38, 0.42);
+      color: rgba(255, 255, 255, 0.38);
     }
 
     .s1-cta-wrap {
@@ -603,7 +607,7 @@
       }
 
       .s1-copy {
-        padding: 96px 32px 0;
+        padding: 0 40px 56px;
       }
 
       .s-empathy {
@@ -656,7 +660,7 @@
         min-height: 440px;
       }
       .s1-copy {
-        padding: 88px 24px 0;
+        padding: 0 28px 44px;
       }
 
       .s-empathy {
@@ -735,19 +739,21 @@
       >
 
       <div class="s1-copy">
-        <span class="scene-tag reveal">NAKATA HANGER — SET-01</span>
-        <h1 class="s1-h1 reveal d1">新しい朝、整ったクローゼットから。</h1>
-        <p class="s1-subcopy reveal d2">環境が変わるとき、最初に整えるのは、背景です。</p>
-        <span class="s1-sub reveal d3">フェルトバー グレー / SET-01（5本セット）</span>
-        <!-- FV CTA: 遅延を最短（d1）に設定 -->
-        <div class="s1-cta-wrap reveal d1">
-          <a
-            href="https://www.nakatahanger-shop.com/?pid=69751649"
-            class="cta-btn cta-btn--dark"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="SET-01 グレー 5本セットを購入する"
-          >クローゼットを整える</a>
+        <div class="s1-copy-panel">
+          <span class="scene-tag reveal">NAKATA HANGER — SET-01</span>
+          <h1 class="s1-h1 reveal d1">新しい朝、整ったクローゼットから。</h1>
+          <p class="s1-subcopy reveal d2">環境が変わるとき、最初に整えるのは、背景です。</p>
+          <span class="s1-sub reveal d3">フェルトバー グレー / SET-01（5本セット）</span>
+          <!-- FV CTA: 遅延を最短（d1）に設定 -->
+          <div class="s1-cta-wrap reveal d1">
+            <a
+              href="https://www.nakatahanger-shop.com/?pid=69751649"
+              class="cta-btn cta-btn--dark"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="SET-01 グレー 5本セットを購入する"
+            >クローゼットを整える</a>
+          </div>
         </div>
       </div>
 
