@@ -267,12 +267,27 @@
       position: relative;
     }
 
+    .s1-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(245, 248, 246, 0.55) 0%,
+        rgba(245, 248, 246, 0.18) 45%,
+        rgba(245, 248, 246, 0) 72%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
     .s1-img {
       width: 100%;
       height: 90vh;
       min-height: 560px;
       display: block;
-      background: linear-gradient(160deg, #d8e4dc 0%, #e2ebe5 45%, #cfdbd3 100%);
+      object-fit: cover;
+      object-position: center;
     }
 
     .s1-copy {
@@ -281,9 +296,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      padding: 110px 56px 0;
       text-align: center;
-      padding: 0 56px;
       z-index: 2;
     }
 
@@ -588,7 +603,7 @@
       }
 
       .s1-copy {
-        padding: 0 32px;
+        padding: 96px 32px 0;
       }
 
       .s-empathy {
@@ -641,7 +656,7 @@
         min-height: 440px;
       }
       .s1-copy {
-        padding: 0 24px;
+        padding: 88px 24px 0;
       }
 
       .s-empathy {
@@ -709,20 +724,15 @@
 
     <div class="s1-hero">
 
-      <!--
-      ┌────────────────────────────────────────────────────────────────┐
-      │  [差し替えポイント] Hero Image                                  │
-      │  推奨サイズ : 1920 × 1080 px 以上                              │
-      │  イメージ   : グレーバーSET-01を装着したスーツのクローゼット全景 │
-      │  差し替え例:                                                   │
-      │  <img src="hero.jpg"                                           │
-      │       alt="グレーバーSET-01を装着したクローゼット"               │
-      │       style="width:100%; height:90vh; min-height:560px;        │
-      │              object-fit:cover; object-position:center;         │
-      │              display:block;">                                  │
-      └────────────────────────────────────────────────────────────────┘
-      -->
-      <div class="s1-img" role="img" aria-label="グレーバーSET-01を装着したクローゼット"></div>
+      <img
+        class="s1-img"
+        src="images/o1gray5.png"
+        alt="グレーバー SET-01を装着したクローゼット — スーツ5着が静かに並ぶ"
+        loading="eager"
+        decoding="async"
+        width="1920"
+        height="1080"
+      >
 
       <div class="s1-copy">
         <span class="scene-tag reveal">NAKATA HANGER — SET-01</span>
