@@ -37,8 +37,8 @@
 
     body {
       font-family: 'Noto Serif JP', Georgia, serif;
-      background-color: #ffffff;
-      color: #111111;
+      background-color: #F6F4EF;
+      color: #2E2E2E;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
@@ -57,18 +57,15 @@
     ================================================================ */
     .reveal {
       opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                  transform 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: opacity 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     .reveal.in-view {
       opacity: 1;
-      transform: translateY(0);
     }
-    .reveal.d1 { transition-delay: 0.18s; }
-    .reveal.d2 { transition-delay: 0.34s; }
-    .reveal.d3 { transition-delay: 0.50s; }
-    .reveal.d4 { transition-delay: 0.66s; }
+    .reveal.d1 { transition-delay: 0.2s; }
+    .reveal.d2 { transition-delay: 0.4s; }
+    .reveal.d3 { transition-delay: 0.6s; }
+    .reveal.d4 { transition-delay: 0.8s; }
 
     /* ================================================================
        SITE HEADER
@@ -83,7 +80,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      mix-blend-mode: difference;
       pointer-events: none;
     }
     .header a {
@@ -91,18 +87,18 @@
       font-size: 0.64rem;
       font-weight: 200;
       letter-spacing: 0.3em;
-      color: #ffffff;
+      color: #2E2E2E;
       text-decoration: none;
     }
     .header-cta {
       font-size: 0.58rem !important;
       letter-spacing: 0.22em !important;
-      border-bottom: 1px solid rgba(255,255,255,0.4);
+      border-bottom: 1px solid rgba(46, 46, 46, 0.3);
       padding-bottom: 2px;
       transition: border-color 0.3s ease;
     }
     .header-cta:hover {
-      border-color: #ffffff;
+      border-color: #2E2E2E;
     }
 
     /* ================================================================
@@ -121,23 +117,23 @@
     .hline {
       width: 48px;
       height: 1px;
-      background-color: #111111;
+      background-color: rgba(46, 46, 46, 0.2);
       margin-bottom: 44px;
     }
 
     .vline {
       width: 1px;
       height: 72px;
-      background-color: #dddddd;
+      background-color: rgba(46, 46, 46, 0.2);
       margin: 0 auto;
     }
 
     .body-text {
       font-size: clamp(0.88rem, 1.55vw, 1.06rem);
       font-weight: 300;
-      line-height: 2.2;
-      letter-spacing: 0.07em;
-      color: #2a2a2a;
+      line-height: 2.4;
+      letter-spacing: 0.08em;
+      color: #2E2E2E;
     }
     .body-text p + p {
       margin-top: 28px;
@@ -147,41 +143,47 @@
        CTA BUTTON VARIANTS
     ================================================================ */
 
-    /* 白ボタン（ダーク背景用） */
+    /* アウトラインボタン（ライト背景用） */
     .cta-btn {
       display: inline-block;
-      padding: 22px 52px;
-      background-color: #ffffff;
-      color: #111111;
+      padding: 24px 56px;
+      background-color: transparent;
+      color: #2E2E2E;
       text-decoration: none;
       font-family: 'Noto Serif JP', serif;
       font-size: clamp(0.78rem, 1.5vw, 0.92rem);
       font-weight: 300;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.15em;
       line-height: 1;
-      border: 1px solid #ffffff;
-      transition: background-color 0.4s ease,
-                  color 0.4s ease,
-                  transform 0.4s ease,
-                  box-shadow 0.4s ease;
+      border: 1px solid #2E2E2E;
+      transition: background-color 0.6s ease, color 0.6s ease;
     }
     .cta-btn:hover {
-      background-color: transparent;
-      color: #ffffff;
-      transform: translateY(-4px);
-      box-shadow: 0 18px 48px rgba(255, 255, 255, 0.07);
+      background-color: #2E2E2E;
+      color: #F6F4EF;
     }
 
-    /* ダークボタン（ライト背景用） */
+    /* フィルドボタン（ライト背景用） */
     .cta-btn--dark {
-      background-color: #2d3d35;
-      color: #ffffff;
-      border-color: #2d3d35;
+      background-color: #2E2E2E;
+      color: #F6F4EF;
+      border-color: #2E2E2E;
     }
     .cta-btn--dark:hover {
       background-color: transparent;
-      color: #2d3d35;
-      box-shadow: 0 18px 48px rgba(45, 61, 53, 0.12);
+      color: #2E2E2E;
+    }
+
+    /* 白アウトラインボタン（ダーク背景専用） */
+    .cta-btn--white {
+      background-color: transparent;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+    .cta-btn--white:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border-color: #ffffff;
     }
 
     /* CTA ラッパー */
@@ -210,29 +212,29 @@
       left: 0;
       right: 0;
       z-index: 300;
-      background-color: rgba(34, 52, 42, 0.96);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 14px 56px;
+      background-color: rgba(246, 244, 239, 0.96);
+      border-top: 1px solid rgba(46, 46, 46, 0.1);
+      padding: 16px 56px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      transform: translateY(100%);
-      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.8s ease;
     }
 
     .sticky-bar.is-visible {
-      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .sticky-bar-text {
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 0.66rem;
-      font-weight: 200;
+      font-weight: 300;
       letter-spacing: 0.18em;
-      color: rgba(255, 255, 255, 0.52);
+      color: rgba(46, 46, 46, 0.6);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -241,23 +243,23 @@
     .sticky-bar-btn {
       display: inline-block;
       flex-shrink: 0;
-      padding: 12px 32px;
-      background-color: #ffffff;
-      color: #111111;
+      padding: 14px 36px;
+      background-color: transparent;
+      color: #2E2E2E;
       text-decoration: none;
       font-family: 'Noto Serif JP', serif;
       font-size: 0.72rem;
       font-weight: 300;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.15em;
       line-height: 1;
-      border: 1px solid #ffffff;
+      border: 1px solid #2E2E2E;
       white-space: nowrap;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.6s ease, color 0.6s ease;
     }
 
     .sticky-bar-btn:hover {
-      background-color: transparent;
-      color: #ffffff;
+      background-color: #2E2E2E;
+      color: #F6F4EF;
     }
 
     /* ================================================================
@@ -351,7 +353,7 @@
     .s-empathy {
       padding: 120px 56px 140px;
       text-align: center;
-      border-top: 1px solid #e8e8e6;
+      border-top: 1px solid rgba(46, 46, 46, 0.08);
     }
 
     .s-empathy-inner {
@@ -380,9 +382,9 @@
        SOLUTION — 解決策 + 3特長
     ================================================================ */
     .s-solution {
-      background-color: #ffffff;
+      background-color: #E5E1D6;
       padding: 140px 56px 160px;
-      border-top: 1px solid #e8e8e6;
+      border-top: 1px solid rgba(46, 46, 46, 0.08);
     }
 
     .s-solution-inner {
@@ -416,12 +418,12 @@
       grid-template-columns: 1fr 1fr 1fr;
       gap: 40px;
       margin-top: 72px;
-      border-top: 1px solid #e0e0e0;
+      border-top: 1px solid rgba(46, 46, 46, 0.1);
       padding-top: 56px;
     }
 
     .feature-item {
-      border-top: 1px solid #e0e0e0;
+      border-top: 1px solid rgba(46, 46, 46, 0.1);
       padding-top: 28px;
     }
 
@@ -430,36 +432,26 @@
       font-family: 'Noto Serif JP', serif;
       font-size: 0.7rem;
       letter-spacing: 0.18em;
-      font-weight: 200;
-      color: #c8d4ce;
-      margin-bottom: 18px;
-    }
-
-    .feature-label {
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.24em;
-      font-weight: 200;
-      color: #aaaaaa;
-      display: block;
-      margin-bottom: 14px;
+      font-weight: 300;
+      color: rgba(46, 46, 46, 0.35);
+      margin-bottom: 24px;
     }
 
     .feature-title {
       font-size: clamp(0.9rem, 1.6vw, 1.05rem);
       font-weight: 300;
-      letter-spacing: 0.1em;
-      line-height: 1.7;
-      color: #111111;
-      margin-bottom: 14px;
+      letter-spacing: 0.12em;
+      line-height: 1.8;
+      color: #2E2E2E;
+      margin-bottom: 18px;
     }
 
     .feature-text {
       font-size: clamp(0.82rem, 1.4vw, 0.92rem);
       font-weight: 300;
-      line-height: 2.1;
-      letter-spacing: 0.06em;
-      color: #555555;
+      line-height: 2.2;
+      letter-spacing: 0.08em;
+      color: rgba(46, 46, 46, 0.7);
     }
 
     /* ================================================================
@@ -467,7 +459,7 @@
     ================================================================ */
     .s-for-whom {
       padding: 140px 56px 160px;
-      border-top: 1px solid #e8e8e6;
+      border-top: 1px solid rgba(46, 46, 46, 0.08);
     }
 
     .s-for-whom-inner {
@@ -488,12 +480,12 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 40px;
-      border-top: 1px solid #ebebeb;
+      border-top: 1px solid rgba(46, 46, 46, 0.1);
       padding-top: 56px;
     }
 
     .for-whom-card {
-      border-left: 1px solid #d0d8d4;
+      border-left: 1px solid rgba(46, 46, 46, 0.15);
       padding-left: 28px;
     }
 
@@ -501,8 +493,8 @@
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 0.62rem;
       letter-spacing: 0.24em;
-      color: #bbbbbb;
-      font-weight: 200;
+      color: rgba(46, 46, 46, 0.4);
+      font-weight: 300;
       display: block;
       margin-bottom: 14px;
     }
@@ -512,26 +504,25 @@
       font-weight: 300;
       letter-spacing: 0.1em;
       line-height: 1.7;
-      color: #111111;
+      color: #2E2E2E;
       margin-bottom: 18px;
     }
 
     .for-whom-card-text {
       font-size: clamp(0.82rem, 1.4vw, 0.92rem);
       font-weight: 300;
-      line-height: 2.1;
-      letter-spacing: 0.06em;
-      color: #555555;
+      line-height: 2.2;
+      letter-spacing: 0.08em;
+      color: rgba(46, 46, 46, 0.7);
     }
 
     /* ================================================================
        色の思想（共通）
     ================================================================ */
     .s-philosophy {
-      background-color: #f5f5f3;
       padding: 140px 56px 160px;
       text-align: center;
-      border-top: 1px solid #e0e0de;
+      border-top: 1px solid rgba(46, 46, 46, 0.08);
     }
 
     .s-philosophy-inner {
@@ -811,7 +802,7 @@
           <div class="s1-cta-wrap reveal d1">
             <a
               href="https://www.nakatahanger-shop.com/?pid=69751649"
-              class="cta-btn"
+              class="cta-btn cta-btn--white"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="SET-01 グレー 5本セットを購入する"
@@ -838,11 +829,11 @@
       <span class="scene-tag reveal">— 新生活</span>
       <div class="hline reveal d1"></div>
 
-      <h2 class="empathy-h2 reveal d2">新生活に、まだ整っていないものがある。</h2>
+      <h2 class="empathy-h2 reveal d2">着替えても、クローゼットはそのままだった。</h2>
 
       <div class="body-text reveal d3">
-        <p>引越し、転職、進学。<br>新しい場所に踏み出すとき、<br>服を新調しても、ハンガーまで選ぶ人は多くありません。</p>
-        <p>でも毎朝開くクローゼットは、<br>一日の始まりを決める場所です。</p>
+        <p>引越し、転職、進学。<br>服は変えた。ハンガーは、前のままだ。</p>
+        <p>毎朝開くクローゼットは、<br>一日の始まりを決める場所です。</p>
         <p>背景が変わると、気持ちが変わる。</p>
       </div>
 
@@ -862,14 +853,14 @@
       <h2 class="solution-h2 reveal d2">5本で、一列が変わる。</h2>
 
       <div class="body-text reveal d3">
-        <p>SET-01 フェルトバー グレーは、<br>主力スーツの一列を統一するために設計されました。<br>国内製造。長く使える品質です。</p>
+        <p>SET-01 フェルトバー グレーは、<br>主力スーツの一列を統一するために設計されました。</p>
         <p>色が揃うだけで、視界は変わります。<br>バラバラだったクローゼットが、静かに整っていく。</p>
       </div>
 
       <div class="product-img-wrap reveal d4">
         <img
           class="product-img"
-          src="images/o1gray.png"
+          src="images/o1gray5.2.png"
           alt="NAKATA HANGER SET-01 フェルトバー グレー 5本セット"
           loading="lazy"
           decoding="async"
@@ -881,19 +872,16 @@
       <div class="feature-grid reveal d4">
         <div class="feature-item">
           <span class="feature-num">01</span>
-          <span class="feature-label">— 肩を守る</span>
           <h3 class="feature-title">フェルトバーが、<br>肩のラインを支える。</h3>
           <p class="feature-text">滑りを抑え、余計な跡を残しません。スーツの型を長く保つ設計です。</p>
         </div>
         <div class="feature-item">
           <span class="feature-num">02</span>
-          <span class="feature-label">— グレーを選ぶ</span>
           <h3 class="feature-title">服の色を問わず、<br>背景になる色。</h3>
           <p class="feature-text">黒ほど強くなく、木色ほど主張しない。最も静かな選択です。</p>
         </div>
         <div class="feature-item">
           <span class="feature-num">03</span>
-          <span class="feature-label">— 5本という単位</span>
           <h3 class="feature-title">整えるための、<br>最小にして十分な数。</h3>
           <p class="feature-text">主力スーツの一列分。全部でなくていい。まず一列から。</p>
         </div>
@@ -934,7 +922,7 @@
         <div class="for-whom-card">
           <span class="for-whom-card-sub">贈り物</span>
           <h3 class="for-whom-card-title">旅立ちへの、実用的な贈り物として</h3>
-          <p class="for-whom-card-text">男性への贈り物で失敗が少ないのは、趣味ではなく日常の質を上げるもの。グレーは、相手の好みを邪魔しない色です。</p>
+          <p class="for-whom-card-text">相手の好みを問わず、日常の質だけを上げる。グレーは、そういう色です。</p>
         </div>
 
         <div class="for-whom-card">
@@ -973,7 +961,7 @@
         <p>黒は、強い。</p>
         <p>木色は、温かい。</p>
         <p>グレーは、背景になる。</p>
-        <p>視線を奪わず、印象を整える色。<br>フェルトバー グレーは、"整えるための色"として設計されています。</p>
+        <p>視線を奪わず、服を引き立てる。<br>それが、グレーです。</p>
       </div>
 
       <!-- 色の思想を読んだ後のCTA -->
@@ -998,8 +986,8 @@
     <span class="s-closing-eyebrow reveal">まずは、5本から。</span>
 
     <p class="s-closing-lead reveal d1">
-      すべてを変える必要はありません。<br>
-      一列を整えるだけで、クローゼットは変わる。
+      すべてを一度に変える必要はない。<br>
+      一列を整えるだけで、景色は変わる。
     </p>
 
     <div class="reveal d2">
@@ -1010,7 +998,7 @@
       </div>
       <a
         href="https://www.nakatahanger-shop.com/?pid=69751649"
-        class="cta-btn"
+        class="cta-btn cta-btn--white"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="SET-01 グレー 5本セットを購入する"
