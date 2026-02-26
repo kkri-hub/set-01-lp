@@ -48,8 +48,7 @@
     }
 
     html {
-      scroll-behavior: smooth; /* common.css: 62.5%=10px base. LP font sizes use px to avoid rem scaling */
-      overflow-x: hidden; /* body に置くと position:fixed がずれるため html に設定 */
+      scroll-behavior: smooth;
     }
 
     body {
@@ -61,6 +60,7 @@
       color: #2E2E2E;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
     /* ================================================================
@@ -735,6 +735,7 @@
   <!-- ============================================================
        SITE HEADER
   ============================================================ -->
+  <div id="header-news"></div>
   <header class="drawer" full-view="true" menu-opened="false" nh-gray-border="3" sp-search-opened="false">
 	<div class="logo-area" nh-gray-border="2">
 		<div class="icons left">
