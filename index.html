@@ -49,11 +49,11 @@
 
     html {
       scroll-behavior: smooth; /* common.css: 62.5%=10px base. LP font sizes use px to avoid rem scaling */
+      overflow-x: hidden; /* body に置くと position:fixed がずれるため html に設定 */
     }
 
     body {
       background-color: #F6F4EF;
-      overflow-x: hidden;
     }
 
     #lp {
@@ -732,21 +732,9 @@
   <!-- nh.js ヘッダー初期化 -->
   <script> _.event.onLoad(function() { this.onLoad(768); }.bind(nh)); </script>
 
-  <!-- ヘッダー高さ制御スタイル（header-news なし） -->
-  <style>
-    /* header-news バーなし：header の 50px 下ズレを防ぐ */
-    header {
-      transform: none !important;
-    }
-    @media only screen and (max-width: 768px) {
-      header .menu-container { padding-bottom: 60px; }
-    }
-  </style>
-
   <!-- ============================================================
        SITE HEADER
   ============================================================ -->
-  <div id='header-news'></div>
   <header class="drawer" full-view="true" menu-opened="false" nh-gray-border="3" sp-search-opened="false">
 	<div class="logo-area" nh-gray-border="2">
 		<div class="icons left">
