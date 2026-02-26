@@ -46,6 +46,12 @@
       padding: 0;
     }
 
+    /* ヘッダー・フッターは nakatahanger.com の CSS をそのまま使用 */
+    header, header *, header *::before, header *::after,
+    footer, footer *, footer *::before, footer *::after {
+      all: revert;
+    }
+
     html {
       scroll-behavior: smooth; /* common.css: 62.5%=10px base. LP font sizes use px to avoid rem scaling */
     }
