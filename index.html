@@ -727,7 +727,7 @@
 
   </style>
 </head>
-<body lang="ja">
+<body lang="ja" header-news="false">
 
   <!-- nh.js ヘッダー初期化 -->
   <script> _.event.onLoad(function() { this.onLoad(768); }.bind(nh)); </script>
