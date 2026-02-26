@@ -38,18 +38,13 @@
   <style>
 
     /* ================================================================
-       RESET & BASE
+       RESET & BASE（LP コンテンツのみ。header/footer は対象外）
     ================================================================ */
-    *, *::before, *::after {
+    #lp, #lp *,
+    #lp *::before, #lp *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    /* ヘッダー・フッターは nakatahanger.com の CSS をそのまま使用 */
-    header, header *, header *::before, header *::after,
-    footer, footer *, footer *::before, footer *::after {
-      all: revert;
     }
 
     html {
@@ -57,12 +52,15 @@
     }
 
     body {
-      font-family: 'Noto Serif JP', Georgia, serif;
       background-color: #F6F4EF;
+      overflow-x: hidden;
+    }
+
+    #lp {
+      font-family: 'Noto Serif JP', Georgia, serif;
       color: #2E2E2E;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
     }
 
     /* ================================================================
@@ -1028,6 +1026,7 @@
 	</nav>
   </header>
 
+  <main id="lp">
 
   <!-- ============================================================
        SCENE 1: ファーストビュー
@@ -1259,6 +1258,9 @@
     </div>
 
   </section>
+
+
+  </main><!-- #lp -->
 
 
   <!-- ============================================================
