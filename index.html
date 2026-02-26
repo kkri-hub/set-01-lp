@@ -727,32 +727,19 @@
 
   </style>
 </head>
-<body lang="ja" header-news="false">
+<body lang="ja">
 
   <!-- nh.js ヘッダー初期化 -->
   <script> _.event.onLoad(function() { this.onLoad(768); }.bind(nh)); </script>
 
-  <!-- ヘッダー高さ制御スタイル（nakatahanger.com 共通） -->
+  <!-- ヘッダー高さ制御スタイル（header-news なし） -->
   <style>
-    #header-news {
-      height: 50px;
-      transform: translateY(-50px);
-    }
-    body:not([header-news="false"])[scrolled-header-news="false"] header {
-      transform: translateY(50px);
+    /* header-news バーなし：header の 50px 下ズレを防ぐ */
+    header {
+      transform: none !important;
     }
     @media only screen and (max-width: 768px) {
-      header .menu-container { padding-bottom: 110px; }
-      [nh-margin="header"] { margin-top: 103px; }
-      body[header-news="false"] header .menu-container { padding-bottom: 60px; }
-      body[header-news="false"] [nh-margin="header"] { margin-top: 53px; }
-      body:not([header-news="false"]) header {
-        transition: transform 600ms cubic-bezier(0.19, 1.00, 0.22, 1.00);
-      }
-    }
-    @media only screen and (min-width: 769px) {
-      [nh-margin="header"] { margin-top: 198px; }
-      body[header-news="false"] [nh-margin="header"] { margin-top: 148px; }
+      header .menu-container { padding-bottom: 60px; }
     }
   </style>
 
