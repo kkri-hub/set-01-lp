@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NAKATA HANGER — SET-01 フェルトバー グレー（5本セット）</title>
+  <title>SET-01 新色フェルトバー（グレー）新登場！ | NAKATA HANGER</title>
 
   <!-- SEO / SNS -->
   <meta name="description" content="新生活の最初に整える、クローゼットの背景。NAKATA HANGER SET-01 フェルトバー グレー（5本セット）。国内製造。">
@@ -334,10 +334,8 @@
 
       <div class="s1-copy">
         <div class="s1-copy-panel">
-          <span class="scene-tag reveal">NAKATA HANGER — SET-01GY</span>
-          <h1 class="s1-h1 reveal d1">新しい朝、整ったクローゼットから。</h1>
-          <p class="s1-subcopy reveal d2">環境が変わるとき、最初に整えるのは、背景です。</p>
-          <span class="s1-sub reveal d3">SET-01GY / メンズスーツハンガー 5本組 / スモークブラウン / フェルトバー付（グレー）</span>
+          <h1 class="s1-h1 reveal d1">新しい朝、整った<span style="white-space:nowrap">クローゼットから。</span></h1>
+          <p class="s1-subcopy reveal d2">SET-01 新色フェルトバー（グレー）新登場</p>
           <!-- FV CTA: 遅延を最短（d1）に設定 -->
           <div class="s1-cta-wrap reveal d1">
             <a
@@ -374,7 +372,7 @@
       <div class="body-text reveal d3">
         <p>引越し、転職、進学。<br>服は変えた。ハンガーは、前のままだ。</p>
         <p>毎朝開くクローゼットは、<br>一日の始まりを決める場所です。</p>
-        <p>背景が変わると、気持ちが変わる。</p>
+        <p>空間が変わると、気持ちが変わる。</p>
       </div>
 
     </div>
@@ -393,7 +391,6 @@
       <h2 class="solution-h2 reveal d2">5本で、一列が変わる。</h2>
 
       <div class="body-text reveal d3">
-        <p>SET-01 フェルトバー グレーは、<br>主力スーツの一列を統一するために設計されました。</p>
         <p>色が揃うだけで、視界は変わります。<br>バラバラだったクローゼットが、静かに整っていく。</p>
       </div>
 
@@ -449,9 +446,7 @@
       <span class="scene-tag reveal">— こんな方へ</span>
       <div class="hline reveal d1"></div>
 
-      <h2 class="for-whom-h2 reveal d2">あなたは、どう使う？</h2>
-
-      <div class="for-whom-grid reveal d3">
+      <div class="for-whom-grid reveal d2">
 
         <div class="for-whom-card">
           <span class="for-whom-card-sub">自分用</span>
@@ -531,17 +526,13 @@
 
     <div class="reveal d2">
       <span class="s-closing-sub">SET-01GY / メンズスーツハンガー 5本組 / フェルトバー付（グレー）</span>
-      <div class="closing-spec">
-        <span class="closing-price">¥19,250</span>
-        <span class="closing-price-note">税込</span>
-      </div>
       <a
         href="https://www.nakatahanger-shop.com/?pid=190670905"
         class="cta-btn cta-btn--white"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="SET-01GY メンズスーツハンガー 5本組を購入する"
-      >クローゼットを整える</a>
+      >商品詳細はこちら</a>
     </div>
 
   </section>
