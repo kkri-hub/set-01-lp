@@ -8,6 +8,16 @@
   padding: 0;
 }
 
+/* common.css の要素セレクタ（0,0,1）を上書き */
+#lp h1, #lp h2, #lp h3, #lp h4, #lp ul, #lp li {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+}
+#lp p {
+  text-indent: 0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -265,6 +275,7 @@ nav[id] {
 }
 
 .s1-copy-panel {
+  width: 100%;
   max-width: 560px;
 }
 
@@ -278,6 +289,10 @@ nav[id] {
   letter-spacing: 0.14em;
   line-height: 1.85;
   color: #ffffff;
+  text-align: left;
+  text-indent: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .s1-subcopy {
@@ -611,6 +626,23 @@ nav[id] {
   }
   .s1-copy {
     padding: 0 28px 44px;
+  }
+  .s1-h1 {
+    letter-spacing: 0.05em;
+  }
+  .s1-subcopy {
+    letter-spacing: 0.06em;
+    max-width: 100%;
+  }
+  .s1-cta-wrap {
+    margin-top: 32px;
+    width: 100%;
+  }
+  .s1-cta-wrap .cta-btn {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    text-align: left;
   }
 
   .s-empathy {
