@@ -442,6 +442,7 @@ nav[id] {
   gap: 40px;
   border-top: 1px solid rgba(46, 46, 46, 0.1);
   padding-top: 56px;
+  margin-top: 44px;
 }
 
 .for-whom-card {
@@ -525,7 +526,7 @@ nav[id] {
 ================================================================ */
 .s-closing {
   background-color: #2d3d35;
-  padding: 160px 56px 200px;
+  padding: 140px 56px 160px;
   text-align: center;
 }
 
@@ -546,56 +547,17 @@ nav[id] {
   line-height: 2.3;
   color: rgba(255, 255, 255, 0.78);
   max-width: 480px;
-  margin: 0 auto 80px;
+  margin: 0 auto 72px;
 }
 
 .s-closing-sub {
   display: block;
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 17px;
-  letter-spacing: 0.3em;
+  font-size: 13px;
+  letter-spacing: 0.24em;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 32px;
-}
-
-.closing-spec {
-  margin: 0 auto 48px;
-  display: block;
-  width: fit-content;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 20px 40px;
-}
-
-.closing-price {
-  display: block;
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(32px, 4vw, 45px);
-  font-weight: 200;
-  letter-spacing: 0.06em;
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-.closing-price-note {
-  display: block;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  font-weight: 200;
-  color: rgba(255, 255, 255, 0.38);
-  margin-bottom: 24px;
-}
-
-.closing-made {
-  display: inline-block;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.26em;
-  font-weight: 200;
-  color: rgba(255, 255, 255, 0.46);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 6px 16px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 56px;
 }
 
 /* ================================================================
