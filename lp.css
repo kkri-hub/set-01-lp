@@ -428,7 +428,7 @@ nav[id] {
 }
 
 .for-whom-h2 {
-  font-size: clamp(17px, 2vw, 22px);
+  font-size: clamp(19px, 2.4vw, 26px);
   font-weight: 300;
   letter-spacing: 0.12em;
   line-height: 1.9;
@@ -451,16 +451,16 @@ nav[id] {
 
 .for-whom-card-sub {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.24em;
-  color: rgba(46, 46, 46, 0.4);
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: rgba(46, 46, 46, 0.65);
   font-weight: 300;
   display: block;
   margin-bottom: 14px;
 }
 
 .for-whom-card-title {
-  font-size: clamp(14px, 1.6vw, 17px);
+  font-size: clamp(17px, 1.9vw, 21px);
   font-weight: 300;
   letter-spacing: 0.1em;
   line-height: 1.7;
@@ -469,7 +469,7 @@ nav[id] {
 }
 
 .for-whom-card-text {
-  font-size: clamp(13px, 1.4vw, 15px);
+  font-size: clamp(15px, 1.6vw, 17px);
   font-weight: 300;
   line-height: 2.2;
   letter-spacing: 0.08em;
