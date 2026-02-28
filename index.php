@@ -341,8 +341,6 @@
             <a
               href="https://www.nakatahanger-shop.com/?pid=190670905"
               class="cta-btn cta-btn--white"
-              target="_blank"
-              rel="noopener noreferrer"
               aria-label="SET-01 グレー 5本セットを購入する"
             >クローゼットを整える</a>
           </div>
@@ -428,8 +426,6 @@
         <a
           href="https://www.nakatahanger-shop.com/?pid=190670905"
           class="cta-btn cta-btn--dark"
-          target="_blank"
-          rel="noopener noreferrer"
         >まず5本で整える</a>
       </div>
 
@@ -472,8 +468,6 @@
         <a
           href="https://www.nakatahanger-shop.com/?pid=190670905"
           class="cta-btn cta-btn--dark"
-          target="_blank"
-          rel="noopener noreferrer"
         >クローゼットを整える</a>
       </div>
 
@@ -503,8 +497,6 @@
         <a
           href="https://www.nakatahanger-shop.com/?pid=190670905"
           class="cta-btn cta-btn--dark"
-          target="_blank"
-          rel="noopener noreferrer"
         >整えはじめる</a>
       </div>
 
@@ -529,8 +521,6 @@
       <a
         href="https://www.nakatahanger-shop.com/?pid=190670905"
         class="cta-btn cta-btn--white"
-        target="_blank"
-        rel="noopener noreferrer"
         aria-label="SET-01GY メンズスーツハンガー 5本組を購入する"
       >商品詳細はこちら</a>
     </div>
@@ -651,8 +641,6 @@
     <a
       href="https://www.nakatahanger-shop.com/?pid=190670905"
       class="sticky-bar-btn"
-      target="_blank"
-      rel="noopener noreferrer"
     >クローゼットを整える</a>
   </div>
 
